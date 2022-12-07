@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SpeedKyat.International.MobileTopupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CurrencyDetail">
+          <Key>
+            <PropertyRef Name="CurrencyDetailId" />
+          </Key>
+          <Property Name="CurrencyDetailId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CurrencyType" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ExchangeRate" Type="float" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OkAccountNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Denomination">
+          <Key>
+            <PropertyRef Name="DenominationId" />
+          </Key>
+          <Property Name="DenominationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OperatorId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Denomination" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TopupTransaction">
+          <Key>
+            <PropertyRef Name="TopupTransactionId" />
+          </Key>
+          <Property Name="TopupTransactionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CountryCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="OperatorName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TopupNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Amount" Type="float" Nullable="false" />
+          <Property Name="AmountInMMK" Type="float" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="TopupStatus" Type="varchar" MaxLength="255" />
+          <Property Name="ErrorMessage" Type="varchar" MaxLength="255" />
+          <Property Name="OkTransactionId" Type="varchar" MaxLength="255" />
+          <Property Name="OkTransactionStatus" Type="varchar" MaxLength="255" />
+          <Property Name="DestinationNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TopupTransactionReferenceId" Type="uniqueidentifier" />
+          <Property Name="CurrencyDetailId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Reference1" Type="nvarchar" MaxLength="500" />
+          <Property Name="Reference2" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK__TopupTran__Curre__1920BF5C">
+          <End Role="CurrencyDetail" Type="Self.CurrencyDetail" Multiplicity="1" />
+          <End Role="TopupTransaction" Type="Self.TopupTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurrencyDetail">
+              <PropertyRef Name="CurrencyDetailId" />
+            </Principal>
+            <Dependent Role="TopupTransaction">
+              <PropertyRef Name="CurrencyDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TopupTran__Custo__182C9B23">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="TopupTransaction" Type="Self.TopupTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="TopupTransaction">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SpeedKyatInternationalMobileTopupModelStoreContainer">
+          <EntitySet Name="CurrencyDetail" EntityType="Self.CurrencyDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Denomination" EntityType="Self.Denomination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TopupTransaction" EntityType="Self.TopupTransaction" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__TopupTran__Curre__1920BF5C" Association="Self.FK__TopupTran__Curre__1920BF5C">
+            <End Role="CurrencyDetail" EntitySet="CurrencyDetail" />
+            <End Role="TopupTransaction" EntitySet="TopupTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TopupTran__Custo__182C9B23" Association="Self.FK__TopupTran__Custo__182C9B23">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="TopupTransaction" EntitySet="TopupTransaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SpeedKyat.International.MobileTopupModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="InternationTopupEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CurrencyDetails" EntityType="SpeedKyat.International.MobileTopupModel.CurrencyDetail" />
+          <EntitySet Name="Customers" EntityType="SpeedKyat.International.MobileTopupModel.Customer" />
+          <EntitySet Name="TopupTransactions" EntityType="SpeedKyat.International.MobileTopupModel.TopupTransaction" />
+          <AssociationSet Name="FK__TopupTran__Curre__1920BF5C" Association="SpeedKyat.International.MobileTopupModel.FK__TopupTran__Curre__1920BF5C">
+            <End Role="CurrencyDetail" EntitySet="CurrencyDetails" />
+            <End Role="TopupTransaction" EntitySet="TopupTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TopupTran__Custo__182C9B23" Association="SpeedKyat.International.MobileTopupModel.FK__TopupTran__Custo__182C9B23">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="TopupTransaction" EntitySet="TopupTransactions" />
+          </AssociationSet>
+          <EntitySet Name="Denominations" EntityType="SpeedKyat.International.MobileTopupModel.Denomination" />
+          </EntityContainer>
+        <EntityType Name="CurrencyDetail">
+          <Key>
+            <PropertyRef Name="CurrencyDetailId" />
+          </Key>
+          <Property Name="CurrencyDetailId" Type="Guid" Nullable="false" />
+          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ExchangeRate" Type="Double" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TopupTransactions" Relationship="SpeedKyat.International.MobileTopupModel.FK__TopupTran__Curre__1920BF5C" FromRole="CurrencyDetail" ToRole="TopupTransaction" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Guid" Nullable="false" />
+          <Property Name="OkAccountNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TopupTransactions" Relationship="SpeedKyat.International.MobileTopupModel.FK__TopupTran__Custo__182C9B23" FromRole="Customer" ToRole="TopupTransaction" />
+        </EntityType>
+        <EntityType Name="TopupTransaction">
+          <Key>
+            <PropertyRef Name="TopupTransactionId" />
+          </Key>
+          <Property Name="TopupTransactionId" Type="Guid" Nullable="false" />
+          <Property Name="CustomerId" Type="Guid" Nullable="false" />
+          <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OperatorName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TopupNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Double" Nullable="false" />
+          <Property Name="AmountInMMK" Type="Double" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TopupStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OkTransactionId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OkTransactionStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DestinationNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TopupTransactionReferenceId" Type="Guid" />
+          <Property Name="CurrencyDetailId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurrencyDetail" Relationship="SpeedKyat.International.MobileTopupModel.FK__TopupTran__Curre__1920BF5C" FromRole="TopupTransaction" ToRole="CurrencyDetail" />
+          <NavigationProperty Name="Customer" Relationship="SpeedKyat.International.MobileTopupModel.FK__TopupTran__Custo__182C9B23" FromRole="TopupTransaction" ToRole="Customer" />
+          <Property Name="Reference1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Reference2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__TopupTran__Curre__1920BF5C">
+          <End Type="SpeedKyat.International.MobileTopupModel.CurrencyDetail" Role="CurrencyDetail" Multiplicity="1" />
+          <End Type="SpeedKyat.International.MobileTopupModel.TopupTransaction" Role="TopupTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurrencyDetail">
+              <PropertyRef Name="CurrencyDetailId" />
+            </Principal>
+            <Dependent Role="TopupTransaction">
+              <PropertyRef Name="CurrencyDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TopupTran__Custo__182C9B23">
+          <End Type="SpeedKyat.International.MobileTopupModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="SpeedKyat.International.MobileTopupModel.TopupTransaction" Role="TopupTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="TopupTransaction">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Denomination">
+          <Key>
+            <PropertyRef Name="DenominationId" />
+          </Key>
+          <Property Name="DenominationId" Type="Guid" Nullable="false" />
+          <Property Name="OperatorId" Type="Guid" Nullable="false" />
+          <Property Name="Denomination1" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SpeedKyatInternationalMobileTopupModelStoreContainer" CdmEntityContainer="InternationTopupEntities">
+          <EntitySetMapping Name="CurrencyDetails">
+            <EntityTypeMapping TypeName="SpeedKyat.International.MobileTopupModel.CurrencyDetail">
+              <MappingFragment StoreEntitySet="CurrencyDetail">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+                <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CurrencyDetailId" ColumnName="CurrencyDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="SpeedKyat.International.MobileTopupModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="OkAccountNumber" ColumnName="OkAccountNumber" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TopupTransactions">
+            <EntityTypeMapping TypeName="SpeedKyat.International.MobileTopupModel.TopupTransaction">
+              <MappingFragment StoreEntitySet="TopupTransaction">
+                <ScalarProperty Name="Reference2" ColumnName="Reference2" />
+                <ScalarProperty Name="Reference1" ColumnName="Reference1" />
+                <ScalarProperty Name="CurrencyDetailId" ColumnName="CurrencyDetailId" />
+                <ScalarProperty Name="TopupTransactionReferenceId" ColumnName="TopupTransactionReferenceId" />
+                <ScalarProperty Name="DestinationNumber" ColumnName="DestinationNumber" />
+                <ScalarProperty Name="OkTransactionStatus" ColumnName="OkTransactionStatus" />
+                <ScalarProperty Name="OkTransactionId" ColumnName="OkTransactionId" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="TopupStatus" ColumnName="TopupStatus" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="AmountInMMK" ColumnName="AmountInMMK" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="TopupNumber" ColumnName="TopupNumber" />
+                <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="TopupTransactionId" ColumnName="TopupTransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Denominations">
+            <EntityTypeMapping TypeName="SpeedKyat.International.MobileTopupModel.Denomination">
+              <MappingFragment StoreEntitySet="Denomination">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Denomination1" ColumnName="Denomination" />
+                <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+                <ScalarProperty Name="DenominationId" ColumnName="DenominationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

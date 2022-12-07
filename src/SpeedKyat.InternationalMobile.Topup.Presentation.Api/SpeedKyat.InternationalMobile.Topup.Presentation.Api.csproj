@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EAD06E6D-D947-412C-B8DA-7828D3C0BF0A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpeedKyat.InternationalMobile.Topup.Presentation.Api</RootNamespace>
+    <AssemblyName>SpeedKyat.InternationalMobile.Topup.Presentation.Api</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>a5de6c03</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging">
+      <HintPath>..\..\packages\Castle.LoggingFacility.3.2.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.WcfIntegration">
+      <HintPath>..\..\packages\Castle.WcfIntegrationFacility.3.2.0\lib\net45\Castle.Facilities.WcfIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration">
+      <HintPath>..\..\packages\Castle.Core-log4net.3.2.0\lib\net45\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Kispanadi.Common">
+      <HintPath>..\..\packages\Kispanadi.Common.1.0.69.11\lib\net451\Kispanadi.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Audit, Version=1.0.69.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Audit.1.0.69.11\lib\net451\Kispanadi.Common.Audit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Authorization, Version=1.0.76.16, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Authorization.1.0.76.16\lib\net451\Kispanadi.Common.Authorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Castle, Version=1.0.69.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Kispanadi.Common.Castle.1.0.69.9\lib\net451\Kispanadi.Common.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Ddd, Version=1.0.69.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Kispanadi.Common.Ddd.1.0.69.7\lib\net451\Kispanadi.Common.Ddd.dll</HintPath>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Ddd.Interface, Version=1.0.73.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Ddd.Interface.1.0.73.11\lib\net451\Kispanadi.Common.Ddd.Interface.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Handlers, Version=1.0.76.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Handlers.1.0.76.11\lib\net451\Kispanadi.Common.Handlers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Net">
+      <HintPath>..\..\packages\Kispanadi.Common.Net.1.0.69.8\lib\net451\Kispanadi.Common.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Net.ActionResults, Version=1.0.75.19, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Kispanadi.Common.Net.ActionResults.1.0.75.19\lib\net451\Kispanadi.Common.Net.ActionResults.dll</HintPath>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Net.ActionResults.Representations, Version=1.0.76.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Net.ActionResults.Representations.1.0.76.7\lib\net451\Kispanadi.Common.Net.ActionResults.Representations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Net.Installer, Version=1.0.79.14, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Net.Installer.1.0.79.14\lib\net451\Kispanadi.Common.Net.Installer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Owin">
+      <HintPath>..\..\packages\Kispanadi.Common.Owin.1.0.69.9\lib\net451\Kispanadi.Common.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Owin.Audit, Version=1.0.76.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Owin.Audit.1.0.76.7\lib\net451\Kispanadi.Common.Owin.Audit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Owin.Ssl, Version=1.0.76.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Owin.Ssl.1.0.76.10\lib\net451\Kispanadi.Common.Owin.Ssl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Owin.WebApi, Version=1.0.76.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Owin.WebApi.1.0.76.11\lib\net451\Kispanadi.Common.Owin.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Owin.Windsor">
+      <HintPath>..\..\packages\Kispanadi.Common.Owin.Windsor.1.0.69.7\lib\net451\Kispanadi.Common.Owin.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Representations">
+      <HintPath>..\..\packages\Kispanadi.Common.Representations.1.0.69.5\lib\net451\Kispanadi.Common.Representations.dll</HintPath>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Wcf.Audit, Version=1.0.76.12, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Kispanadi.Common.Wcf.Audit.1.0.76.12\lib\net451\Kispanadi.Common.Wcf.Audit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kispanadi.Common.Wcf.Faults, Version=1.0.69.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Kispanadi.Common.Wcf.Faults.1.0.69.7\lib\net451\Kispanadi.Common.Wcf.Faults.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.HttpListener.2.0.2\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting">
+      <HintPath>..\..\packages\Microsoft.Owin.Hosting.2.0.2\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SpeedKyat.ServiceProvider.Interface.Common">
+      <HintPath>..\..\packages\SpeedKyat.ServiceProvider.Interface.Common.1.1.19\lib\net451\SpeedKyat.ServiceProvider.Interface.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebApi.Hal">
+      <HintPath>..\..\packages\WebApi.Hal.2.6.0\lib\net45\WebApi.Hal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlers\CountryCommandHandler.cs" />
+    <Compile Include="CommandHandlers\TopupCommandHandler.cs" />
+    <Compile Include="Controllers\CountriesWithVersionController.cs" />
+    <Compile Include="Controllers\CountriesController.cs" />
+    <Compile Include="Controllers\OperatorsController.cs" />
+    <Compile Include="Controllers\TopupController.cs" />
+    <Compile Include="Controllers\TopupTransactionController.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\LinkTemplates.cs" />
+    <Compile Include="IoC\ContainerFactory.cs" />
+    <Compile Include="IoC\Installers\AuditingHandlerInstaller.cs" />
+    <Compile Include="IoC\Installers\CommandHandlerInstaller.cs" />
+    <Compile Include="IoC\Installers\ControllerInstaller.cs" />
+    <Compile Include="IoC\Installers\KatanaDependencyResolverInstaller.cs" />
+    <Compile Include="IoC\Installers\LoggerInstaller.cs" />
+    <Compile Include="IoC\Installers\QueryHandlerInstaller.cs" />
+    <Compile Include="IoC\Installers\ServiceInstaller.cs" />
+    <Compile Include="Models\TopupModel.cs" />
+    <Compile Include="Models\VersionModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHandlers\GetAllCountriesQueryHandler.cs" />
+    <Compile Include="QueryHandlers\GetAllOperatorsQueryHandler.cs" />
+    <Compile Include="QueryHandlers\GetTopupTransactionByOkTransactionIdQueryHandler.cs" />
+    <Compile Include="StartUp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpeedKyat.InternationalMobile.Topup.Interface.Common\SpeedKyat.InternationalMobile.Topup.Interface.Common.csproj">
+      <Project>{ACFDA75E-A225-4699-A4A0-203E012B8230}</Project>
+      <Name>SpeedKyat.InternationalMobile.Topup.Interface.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2214</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1200/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\..\packages\OctoPack.3.6.3\build\OctoPack.targets" Condition="Exists('..\..\packages\OctoPack.3.6.3\build\OctoPack.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\OctoPack.3.6.3\build\OctoPack.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\OctoPack.3.6.3\build\OctoPack.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

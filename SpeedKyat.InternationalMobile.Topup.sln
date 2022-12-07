@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedKyat.InternationalMobile.Topup.Infrastructure.Persistence", "src\SpeedKyat.InternationalMobile.Topup.Infrastructure.Persistence\SpeedKyat.InternationalMobile.Topup.Infrastructure.Persistence.csproj", "{04EE0B14-CE5F-48CB-A742-6D77B96D79D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedKyat.InternationalMobile.Topup.Domain", "src\SpeedKyat.InternationalMobile.Topup.Domain\SpeedKyat.InternationalMobile.Topup.Domain.csproj", "{92EB5A29-3C43-46C3-A8D8-820018DC5D5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedKyat.InternationalMobile.Topup.Application", "src\SpeedKyat.InternationalMobile.Topup.Application\SpeedKyat.InternationalMobile.Topup.Application.csproj", "{DF6BF763-1BBA-4770-8136-DC5BDC285395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedKyat.InternationalMobile.Topup.Interface.Common", "src\SpeedKyat.InternationalMobile.Topup.Interface.Common\SpeedKyat.InternationalMobile.Topup.Interface.Common.csproj", "{ACFDA75E-A225-4699-A4A0-203E012B8230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedKyat.InternationalMobile.Topup.Interface.Common.Service", "src\SpeedKyat.InternationalMobile.Topup.Interface.Common.Service\SpeedKyat.InternationalMobile.Topup.Interface.Common.Service.csproj", "{5ACB27AA-2573-47C3-BE57-A437010A92DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedKyat.InternationalMobile.Topup.Service.Host", "src\SpeedKyat.InternationalMobile.Topup.Service.Host\SpeedKyat.InternationalMobile.Topup.Service.Host.csproj", "{98D09F3F-C389-4869-9210-7E1761F649AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedKyat.InternationalMobile.Topup.Presentation.Api", "src\SpeedKyat.InternationalMobile.Topup.Presentation.Api\SpeedKyat.InternationalMobile.Topup.Presentation.Api.csproj", "{EAD06E6D-D947-412C-B8DA-7828D3C0BF0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedKyat.InternationalMobile.Topup.Testing", "src\SpeedKyat.InternationalMobile.Topup.Testing\SpeedKyat.InternationalMobile.Topup.Testing.csproj", "{A4A2DD5E-4653-4E44-B4AA-94827B53F660}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04EE0B14-CE5F-48CB-A742-6D77B96D79D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04EE0B14-CE5F-48CB-A742-6D77B96D79D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04EE0B14-CE5F-48CB-A742-6D77B96D79D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04EE0B14-CE5F-48CB-A742-6D77B96D79D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92EB5A29-3C43-46C3-A8D8-820018DC5D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92EB5A29-3C43-46C3-A8D8-820018DC5D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92EB5A29-3C43-46C3-A8D8-820018DC5D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92EB5A29-3C43-46C3-A8D8-820018DC5D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF6BF763-1BBA-4770-8136-DC5BDC285395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6BF763-1BBA-4770-8136-DC5BDC285395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6BF763-1BBA-4770-8136-DC5BDC285395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6BF763-1BBA-4770-8136-DC5BDC285395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFDA75E-A225-4699-A4A0-203E012B8230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFDA75E-A225-4699-A4A0-203E012B8230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFDA75E-A225-4699-A4A0-203E012B8230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFDA75E-A225-4699-A4A0-203E012B8230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACB27AA-2573-47C3-BE57-A437010A92DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACB27AA-2573-47C3-BE57-A437010A92DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACB27AA-2573-47C3-BE57-A437010A92DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACB27AA-2573-47C3-BE57-A437010A92DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98D09F3F-C389-4869-9210-7E1761F649AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98D09F3F-C389-4869-9210-7E1761F649AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98D09F3F-C389-4869-9210-7E1761F649AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98D09F3F-C389-4869-9210-7E1761F649AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD06E6D-D947-412C-B8DA-7828D3C0BF0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD06E6D-D947-412C-B8DA-7828D3C0BF0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD06E6D-D947-412C-B8DA-7828D3C0BF0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD06E6D-D947-412C-B8DA-7828D3C0BF0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4A2DD5E-4653-4E44-B4AA-94827B53F660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4A2DD5E-4653-4E44-B4AA-94827B53F660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4A2DD5E-4653-4E44-B4AA-94827B53F660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4A2DD5E-4653-4E44-B4AA-94827B53F660}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
